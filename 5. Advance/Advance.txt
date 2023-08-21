@@ -1,0 +1,5 @@
+Chạy ETL sử dụng SSIS ở On-premises Data Warehouse:  00:00:00.554
+
+Chạy ETL sử dụng T-SQL PROCEDURE ở On-premises Data Warehouse : 00:00:43s
+
+Chạy ETL sử dụng T-SQL PROCEDURE ở Cloud Data Warehouse : 3m4s

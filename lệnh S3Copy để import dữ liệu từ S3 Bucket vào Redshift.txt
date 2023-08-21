@@ -1,0 +1,58 @@
+COPY asm3_dbo.dim_coutry (country_id,country)
+FROM 's3://dep304-asm3/asm3/DIM_COUTRY.csv'
+iam_role 'arn:aws:iam::340996647459:role/roleasm3'
+CSV
+EXPLICIT_IDS
+ignoreheader 1;
+
+COPY asm3_dbo.dim_date (date_id,date_added,release_year)
+FROM 's3://dep304-asm3/asm3/DIM_DATE.csv'
+iam_role 'arn:aws:iam::340996647459:role/roleasm3'
+CSV
+EXPLICIT_IDS
+ignoreheader 1;
+
+COPY asm3_dbo.dim_director (director_id,director)
+FROM 's3://dep304-asm3/asm3/DIM_DIRECTOR.csv'
+iam_role 'arn:aws:iam::340996647459:role/roleasm3'
+CSV
+EXPLICIT_IDS
+ignoreheader 1;
+
+COPY asm3_dbo.dim_duration (duration_id,duration)
+FROM 's3://dep304-asm3/asm3/DIM_DURATION.csv'
+iam_role 'arn:aws:iam::340996647459:role/roleasm3'
+CSV
+EXPLICIT_IDS
+ignoreheader 1;
+
+COPY asm3_dbo.dim_info (info_id,title,listed_in,description,"cast")
+FROM 's3://dep304-asm3/asm3/DIM_INFO.csv'
+iam_role 'arn:aws:iam::340996647459:role/roleasm3'
+CSV
+EXPLICIT_IDS
+ignoreheader 1;
+
+COPY asm3_dbo.dim_rating (rating_id,rating)
+FROM 's3://dep304-asm3/asm3/DIM_RATING.csv'
+iam_role 'arn:aws:iam::340996647459:role/roleasm3'
+CSV
+EXPLICIT_IDS
+ignoreheader 1;
+
+COPY asm3_dbo.dim_type (type_id,type)
+FROM 's3://dep304-asm3/asm3/DIM_TYPE.csv'
+iam_role 'arn:aws:iam::340996647459:role/roleasm3'
+CSV
+EXPLICIT_IDS
+ignoreheader 1;
+
+COPY asm3_dbo.fact_netflix_shows (show_id,info_id,type_id,director_id,country_id,date_id,rating_id,duration_id)
+FROM 's3://dep304-asm3/asm3/FACT_NETFLIX_SHOWS.csv'
+iam_role 'arn:aws:iam::340996647459:role/roleasm3'
+CSV
+EXPLICIT_IDS
+ignoreheader 1;
+
+
+
